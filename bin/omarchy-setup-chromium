@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Installing Chromium..."
+yay -S --noconfirm --needed chromium
+
+echo "Starting Chromium..."
+uwsm app -- chromium --ozone-platform=wayland --new-window

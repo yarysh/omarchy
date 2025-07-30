@@ -101,8 +101,9 @@ remove_theme_prompt() {
 
 setup_menu() {
   show_ascii_art
-  local menu=("Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
+  local menu=("Chromium" "Docker DBs" "Fingerprint sensor" "Fido2 device" "Back")
   local commands=(
+    "omarchy-setup-chromium"
     "setup_docker_dbs"
     "omarchy-setup-fingerprint"
     "omarchy-setup-fido2"
@@ -143,7 +144,7 @@ setup_docker_dbs() {
 }
 
 open_manual() {
-  setsid chromium --new-window --ozone-platform=wayland --app="https://manuals.omamix.org/2/the-omarchy-manual" >/dev/null 2>&1 &
+  setsid firefox --new-window --app="https://manuals.omamix.org/2/the-omarchy-manual" >/dev/null 2>&1 &
   clear
 }
 
