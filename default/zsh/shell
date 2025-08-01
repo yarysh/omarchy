@@ -1,0 +1,23 @@
+# History control
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt append_history         #
+setopt share_history          # share command history data
+
+# Autocompletion
+autoload -Uz compinit && compinit
+
+# Set complete path
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omarchy/bin:$PATH"
+set +h
+
+# Omarchy path
+export OMARCHY_PATH="/home/$USER/.local/share/omarchy"

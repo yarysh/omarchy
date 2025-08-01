@@ -1,0 +1,27 @@
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
+source ~/.local/share/omarchy/default/zsh/rc
+
+# My own exports, aliases, and functions here.
+
+# Vim keys
+bindkey -v
+
+# Start typing + [Up-Arrow] - fuzzy find history forward
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\eOA' up-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+bindkey '\eOB' down-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
+
+# Highlight items in autocompletion menu
+zstyle ':completion:*' menu select
+
+# Aliases
+alias h='history 0'
+alias hl='history 0 | less'
+alias hs='history 0 | grep'
+alias hsi='history 0 | grep -i'

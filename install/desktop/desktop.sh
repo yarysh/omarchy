@@ -14,3 +14,6 @@ if lspci | grep -qi 'nvidia'; then
 else
   yay -S --noconfirm --needed wl-screenrec
 fi
+
+# Set ZSH as default shell
+chsh -s /usr/bin/zsh
